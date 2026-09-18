@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Constantine Bichun — Applied ML Engineer</title>
+  <meta name="description" content="Applied ML engineer focused on low-latency quantitative systems, autonomous AI agents, and production ML research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1c1e;
+      --muted: #5a5f66;
+      --rule: #d8d4c8;
+      --bg: #f7f6f3;
+      --paper: #ffffff;
+      --accent: #1f4b3f;
+      --chip: #eef2f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+      font-size: 13.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 920px;
+      margin: 28px auto;
+      background: var(--paper);
+      border: 1px solid #e5e2db;
+      box-shadow: 0 10px 40px rgba(20, 24, 28, 0.06);
+      padding: 40px 44px 48px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 18px;
+    }
+
+    .name {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .title {
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .legal {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 12.5px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      justify-content: center;
+    }
+
+    .contact strong { color: var(--ink); font-weight: 600; }
+
+    .profile {
+      margin-bottom: 18px;
+      color: var(--ink);
+      max-width: 78ch;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 20px;
+    }
+
+    .keywords span {
+      background: var(--chip);
+      color: #2c3432;
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
+
+    h2 {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 5px;
+      margin: 22px 0 12px;
+      font-weight: 700;
+    }
+
+    .job { margin-bottom: 16px; }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .job-role { font-weight: 700; font-size: 14px; }
+    .job-meta { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+    .job-org { color: var(--muted); font-size: 12.5px; margin-bottom: 6px; }
+    .job-summary { margin-bottom: 8px; max-width: 82ch; }
+
+    .project {
+      margin: 12px 0 14px;
+      padding-left: 12px;
+      border-left: 2px solid #cdd8d3;
+    }
+
+    .project h3 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .project p { margin-bottom: 6px; max-width: 82ch; }
+
+    ul {
+      margin: 4px 0 6px 16px;
+      max-width: 84ch;
+    }
+
+    li { margin-bottom: 3px; }
+
+    .core {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .core strong { color: var(--ink); font-weight: 600; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 28px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 10px;
+      margin-bottom: 7px;
+      font-size: 12.5px;
+    }
+
+    .skill-row dt {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .skill-row dd { color: #33383d; }
+
+    .compact-list li { margin-bottom: 2px; }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 85ch;
+    }
+
+    .actions {
+      max-width: 920px;
+      margin: 0 auto 12px;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      padding: 0 4px;
+    }
+
+    .actions button {
+      appearance: none;
+      border: 1px solid #c9c4ba;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .actions button:hover { background: #f0eee8; }
+
+    @media print {
+      body { background: #fff; font-size: 11.5px; }
+      .actions { display: none !important; }
+      .page {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+      }
+      a { color: inherit; text-decoration: none; }
+      .project { break-inside: avoid; }
+      .job { break-inside: avoid; }
+    }
+
+    @media (max-width: 720px) {
+      .page { margin: 0; border: none; box-shadow: none; padding: 24px 18px 36px; }
+      header { grid-template-columns: 1fr; }
+      .contact { text-align: left; }
+      .job-head { flex-direction: column; gap: 2px; }
+      .job-meta { white-space: normal; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .skill-row { grid-template-columns: 1fr; gap: 2px; }
+      .actions { justify-content: stretch; padding: 12px 18px 0; }
+      .actions button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="actions">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main class="page">
+    <header>
+      <div>
+        <div class="name">Constantine Bichun</div>
+        <div class="title">Applied ML Engineer · Quantitative Systems &amp; Autonomous AI</div>
+        <div class="legal">Legal name: Kanstantsin Bichun · US Permanent Resident</div>
+      </div>
+      <div class="contact">
+        <strong>Hillsborough, NJ</strong>
+        <a href="mailto:kn.bichun@gmail.com">kn.bichun@gmail.com</a>
+        <a href="https://www.linkedin.com/in/constantine-bichun/" rel="noopener">LinkedIn</a>
+        <span>English — Fluent · Russian — Native</span>
+        <span>Python · C++ · Go · SQL · Git</span>
+      </div>
+    </header>
+
+    <p class="profile">
+      Applied ML engineer with production experience in quantitative finance and end-to-end AI systems.
+      I build models that must survive latency, data, and operational constraints — and the surrounding software that turns those models into controlled decisions and actions.
+      Recent work spans low-latency inference for trading-adjacent systems, autonomous agent architectures, planner-constrained analytics, and hybrid retrieval beyond vector-only RAG.
+      Comfortable shipping through Git-based workflows and using AI coding agents as part of day-to-day engineering, not as a demo layer.
+    </p>
+
+    <div class="keywords">
+      <span>Low-Latency ML</span>
+      <span>Quantitative Systems</span>
+      <span>Time Series</span>
+      <span>Autonomous Agents</span>
+      <span>AI Coding Agents</span>
+      <span>Git Workflows</span>
+      <span>AI Planning</span>
+      <span>Hybrid Retrieval</span>
+      <span>Production ML</span>
+      <span>Decision Systems</span>
+    </div>
+
+    <h2>Selected Work — Scroogeer</h2>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-role">Founder &amp; Lead ML / AI Engineer</div>
+        <div class="job-meta">2025 — Present</div>
+      </div>
+      <div class="job-org">Scroogeer · Applied AI &amp; engineering company</div>
+      <p class="job-summary">
+        Founded and led delivery of production machine-learning, low-latency quantitative, autonomous AI,
+        and enterprise automation systems. Worked across modelling and ML research, training pipelines,
+        inference, retrieval/agent architectures, backend, security, deployment, and client delivery.
+      </p>
+
+      <section class="project">
+        <h3>Low-Latency ML / HFT Pipeline</h3>
+        <p>Designed and implemented a complete ML pipeline for a client-side high-frequency trading system.</p>
+        <ul>
+          <li>Built the predictive modelling stack around LightGBM for structured market data.</li>
+          <li>Owned the full ML lifecycle: data preparation, feature processing, training, validation, model selection, and production artifact generation.</li>
+          <li>Ran systematic hyperparameter optimization with Optuna; kept training and deployment as a reproducible pipeline rather than an isolated binary.</li>
+          <li>Implemented the latency-critical inference path in C++ and profiled it to ~20 μs model-side latency.</li>
+          <li>Separated model/inference performance from downstream execution: broker-side order processing was ~1–2 s, so execution latency and slippage dominated the end-to-end path.</li>
+          <li>Avoided attributing trading P&amp;L to model quality where external execution effects prevented reliable causal attribution.</li>
+        </ul>
+        <p class="core"><strong>Core:</strong> C++ · LightGBM · Optuna · Python · Low-Latency Inference · Quantitative Systems</p>
+      </section>
+
+      <section class="project">
+        <h3>AI Agents &amp; Autonomous Systems</h3>
+        <p>Built production AI systems intended to perform operational work, not act as standalone chat interfaces.</p>
+        <ul>
+          <li>Connected LLM agents to databases, APIs, files, and operational systems with controlled tool execution.</li>
+          <li>Combined probabilistic model reasoning with deterministic application logic, structured outputs, and validation boundaries.</li>
+          <li>Designed multi-step workflows covering retrieval → reasoning → planning → execution → result inspection.</li>
+          <li>Used bounded-context design so agents receive only the operational context required for the task.</li>
+          <li>Treated the LLM as one reasoning component inside a larger software architecture; chose local vs. external models based on privacy, latency, and task constraints.</li>
+        </ul>
+      </section>
+
+      <section class="project">
+        <h3>AI Planning &amp; Autonomous Analytics</h3>
+        <ul>
+          <li>Designed planner-oriented pipelines: parsing → typed validation → planning → actions → execution → inspection.</li>
+          <li>Explored A* planning with explicit state, goal, and action representations; built structured action graphs for multi-step analytical work.</li>
+          <li>Built a Quick Data Inspector for automated analysis of operational datasets, including immutable analytical snapshots.</li>
+          <li>Implemented issue extraction and ranking pipelines to surface top-K operational problems.</li>
+          <li>Separated deterministic numerical analysis from subsequent LLM interpretation via structured API/JSON contracts.</li>
+        </ul>
+      </section>
+
+      <section class="project">
+        <h3>Associated Memory / Graph Retrieval</h3>
+        <ul>
+          <li>Researched retrieval beyond vector-only RAG: Associated Memory combining semantic retrieval, graph relationships, and structured operational data.</li>
+          <li>Worked with HippoRAG-style associative retrieval and PathRAG-style path retrieval/pruning over relationship chains.</li>
+          <li>Designed pipelines where semantic similarity selects the search region, graphs determine connectivity, and live DBs/APIs supply final factual evidence.</li>
+          <li>Explicitly separated semantic memory from operational sources of truth; used embeddings, FAISS, and hybrid retrieval to reduce unnecessary LLM context.</li>
+        </ul>
+      </section>
+
+      <section class="project">
+        <h3>Local / Private AI &amp; Enterprise Automation</h3>
+        <ul>
+          <li>Deployed local LLMs and inference pipelines for privacy-sensitive workloads; integrated models with SQL, internal APIs, and enterprise data.</li>
+          <li>Automated workflows spanning ERP, CRM, SQL, spreadsheets, and email without replacing core systems of record.</li>
+          <li>Delivered client-owned deployments with direct ownership from discovery through architecture, implementation, and production.</li>
+        </ul>
+      </section>
+
+      <section class="project">
+        <h3>Production Systems (selected)</h3>
+        <ul class="compact-list">
+          <li><strong>Identity &amp; Access:</strong> reusable IAM service in Go — auth, sessions, RBAC, multi-tenant authorization, TOTP MFA, step-up auth, Argon2id, AES-GCM, CSRF, rate limiting.</li>
+          <li><strong>Admin platform:</strong> Next.js / React / TypeScript frontend with Go services and BFF over HTTP-only cookies.</li>
+          <li><strong>Infrastructure:</strong> Docker Compose production stacks (Go, Python/FastAPI, Next.js, PostgreSQL, nginx), workers, health checks, backups, Cloudflare Tunnel where needed.</li>
+          <li><strong>AIoT:</strong> real-time voice → VAD → whisper.cpp → command detection → Canon DSLR capture → generative AI pipeline in Go.</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>Prior Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-role">Tech Lead Treasury · Senior Applied ML · Team Lead</div>
+        <div class="job-meta">May 2024 — May 2025</div>
+      </div>
+      <div class="job-org">Alfa-Bank</div>
+      <ul>
+        <li>Led AI-driven treasury systems for pricing and trading; focused on real-time decision systems and financial-flow optimization.</li>
+        <li>Built arbitrage trading infrastructure using FIX/FAST and Kafka; developed currency optimization and AI triangulation / equilibrium pricing used in production.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-role">Senior Data Scientist</div>
+        <div class="job-meta">Aug 2023 — Apr 2024</div>
+      </div>
+      <div class="job-org">Alfa-Bank</div>
+      <ul>
+        <li>Developed an AI triangulation model for currency-rate optimization using sales-location information and peer-location geometry.</li>
+        <li>Built and maintained multi-source datasets of exchange rates and location data for production modelling.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-role">Middle / Data Scientist</div>
+        <div class="job-meta">Jul 2021 — Jul 2023</div>
+      </div>
+      <div class="job-org">Alfa-Bank</div>
+      <ul>
+        <li>Built a Next Best Offer system for 500k+ active clients with ~75% efficiency improvement vs. the prior approach.</li>
+        <li>Shipped currency AI that automated client trading on individual rates, contributing to &gt;20% improvement in FX exchange results.</li>
+        <li>Developed optimization engines for rate balance under banking constraints; mentored new hires and interns.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-role">Earlier roles</div>
+        <div class="job-meta">2019 — 2021</div>
+      </div>
+      <div class="job-org">Risk Manager · GrandCasino · Financial / Operational Risk · Bank Dabrabyt · Trainee Analyst · Ministry of Economy (Macroeconomic Analysis &amp; Forecasting)</div>
+    </div>
+
+    <h2>Technical Scope</h2>
+    <dl>
+      <div class="skill-row">
+        <dt>Quantitative / Low-Latency</dt>
+        <dd>C++ · LightGBM · Optuna · Python · Time Series · Quantitative Finance · Low-Latency Inference</dd>
+      </div>
+      <div class="skill-row">
+        <dt>AI / ML</dt>
+        <dd>PyTorch · CatBoost · XGBoost · LLMs · Local Inference · Autonomous Agents · AI Coding Agents · Structured Outputs · Tool Use · AI Planning</dd>
+      </div>
+      <div class="skill-row">
+        <dt>Retrieval &amp; Memory</dt>
+        <dd>RAG · HippoRAG · Path-Based Retrieval · Graph Retrieval · Embeddings · FAISS · Hybrid Retrieval</dd>
+      </div>
+      <div class="skill-row">
+        <dt>Data &amp; Systems</dt>
+        <dd>SQL · PostgreSQL · Kafka · FIX/FAST · Spark · Dask · Polars · Event-Driven Systems</dd>
+      </div>
+      <div class="skill-row">
+        <dt>Backend &amp; Infra</dt>
+        <dd>Go · Python · FastAPI · REST · Git · Docker · nginx · Linux · Cloudflare</dd>
+      </div>
+      <div class="skill-row">
+        <dt>Security</dt>
+        <dd>IAM · RBAC · MFA/TOTP · Step-Up Auth · Argon2id · AES-GCM · CSRF · Rate Limiting</dd>
+      </div>
+    </dl>
+
+    <h2>Education &amp; Speaking</h2>
+    <div class="grid-2">
+      <ul class="compact-list">
+        <li><strong>Belarus State Economic University</strong> — International Economic Relations</li>
+        <li>Coursera / Stanford — Machine Learning</li>
+        <li>Academy BELHARD — Python Programming</li>
+      </ul>
+      <ul class="compact-list">
+        <li>Invited Lecturer, BSU CS — Recommendation Systems</li>
+        <li>Invited Lecturer, BSU CS — Time Series forecasting on market quotes (lecture recorded / available on YouTube)</li>
+        <li>Speaker, Alfa Group Meetup — Individual Currency Rate Optimization</li>
+      </ul>
+    </div>
+
+    <h2>Honors &amp; Achievements</h2>
+    <ul class="compact-list">
+      <li><strong>National Geography Olympiad</strong> — Third Prize Diploma · Republic of Belarus · 2012–2013</li>
+    </ul>
+
+    <p class="footer-note">
+      Engineering profile: personally owned work across ML research, quantitative modelling, architecture,
+      implementation, performance, security, infrastructure, and production delivery — moving systems from
+      data → retrieval → modelling → reasoning/planning → decision → controlled action → production feedback.
+    </p>
+  </main>
+</body>
+</html>
