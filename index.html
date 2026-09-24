@@ -331,9 +331,9 @@
 
     .actions button {
       appearance: none;
-      border: 1px solid #3a4148;
+      border: 1px solid var(--accent);
       background: transparent;
-      color: #d7d2c8;
+      color: var(--accent);
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.06em;
@@ -342,7 +342,10 @@
       cursor: pointer;
     }
 
-    .actions button:hover { background: #22272c; }
+    .actions button:hover {
+      background: var(--accent);
+      color: #f4f0e6;
+    }
 
     @media print {
       body { background: #fff; font-size: 11px; }
